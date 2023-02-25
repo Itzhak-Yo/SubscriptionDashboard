@@ -1,5 +1,5 @@
 export enum PackageType {
-  Personal,
-  Business,
-  Enterprise,
+  Basic,
+  Premium,
+  Ultimate,
 }
