@@ -1,9 +1,13 @@
 <div class="wrapper">
   <app-side-nav></app-side-nav>
-  <section class="packages">
+  <section class="packages" *ngIf="subscriptionId; else noSubscriptionId">
     <app-package></app-package>
     <app-package></app-package>
     <app-package></app-package>
     <app-package></app-package>
   </section>
 </div>
+
+<<ng-template #noSubscriptionId>
+  <p>please select subscriptionId from the navigation bar</p>
+</ng-template>
