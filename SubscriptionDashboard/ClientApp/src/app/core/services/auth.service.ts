@@ -1,21 +1,29 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, mapTo, tap } from 'rxjs/operators';
 import { ApiService } from './api.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private accessTokenKey = 'access_token';
+  private timerId!: NodeJS.Timeout;
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private ngZone: NgZone,
+    private router: Router
+  ) {}
 
   public login(userId: number): Observable<boolean> {
     return this.apiService.getUser(userId).pipe(
       map((response: any) => {
-        if (response.token) {
+        if (response.success && response.token) {
+          // need to add jwt auth token to api and send it in header with bearer
           this.accessToken = response.token;
+          this.startTimer();
           return true;
         }
         return false;
@@ -28,7 +36,9 @@ export class AuthService {
   }
 
   public logout(): void {
+    clearTimeout(this.timerId);
     localStorage.removeItem(this.accessTokenKey);
+    this.router.navigate(['/login']);
   }
 
   public get isLoggedIn(): boolean {
@@ -45,5 +55,13 @@ export class AuthService {
     } else {
       localStorage.removeItem(this.accessTokenKey);
     }
+  }
+
+  private startTimer(): void {
+    this.ngZone.runOutsideAngular(() => {
+      this.timerId = setTimeout(() => {
+        this.logout();
+      }, 5 * 60 * 1000); // 5 minutes in milliseconds
+    });
   }
 }
