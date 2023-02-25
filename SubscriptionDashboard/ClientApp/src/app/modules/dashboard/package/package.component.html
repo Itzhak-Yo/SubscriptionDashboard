@@ -1,1 +1,23 @@
-<p>package works!</p>
+<mat-card class="package">
+  <mat-card-header>
+    <mat-card-subtitle>Package Type</mat-card-subtitle>
+    <mat-card-title class="title"
+      >Package Name Package Name Package Name</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content class="package-content">
+    <p>Used: 15/100 (15%)</p>
+    <ngx-charts-pie-chart
+      class="pie-chart"
+      [view]="PIE_CHART_CONFIG.view"
+      [results]="single"
+      [customColors]="PIE_CHART_CONFIG.barChartcustomColors"
+      [doughnut]="PIE_CHART_CONFIG.isDoughnut"
+      [arcWidth]="PIE_CHART_CONFIG.arcWidth"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+    >
+    </ngx-charts-pie-chart>
+  </mat-card-content>
+</mat-card>

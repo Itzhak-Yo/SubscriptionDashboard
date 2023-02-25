@@ -1,0 +1,17 @@
+.package{
+  max-width: 30%;
+  margin: 1rem;
+  padding: 0 0.25rem;
+}
+
+.title {
+  line-height: normal;
+}
+
+.pie-chart {
+  margin: 0 auto;
+}
+
+::ng-deep .ngx-charts-outer {
+  margin: 0 auto;
+}
