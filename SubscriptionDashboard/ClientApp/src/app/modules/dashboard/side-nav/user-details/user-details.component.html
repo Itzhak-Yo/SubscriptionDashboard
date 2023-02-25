@@ -7,8 +7,21 @@
     <p>ID: 123456789</p>
     <div>
       <p>Address: New York, Broadway 123, Apt 4, 10001</p>
-      <button mat-raised-button color="primary">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openUserAdressEditPopup()"
+      >
         change address <mat-icon>edit</mat-icon>
+      </button>
+      <br />
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="switchUser()"
+        class="switch-user"
+      >
+        switch user <mat-icon>logout</mat-icon>
       </button>
     </div>
   </mat-card-content>

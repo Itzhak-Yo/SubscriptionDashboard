@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h3>Welcome, please enter your ID:</h3>
+  <mat-form-field>
+    <mat-label>User ID</mat-label>
+    <input matInput formControlName="userId" />
+    <mat-error *ngIf="userId?.errors?.required">User ID is required.</mat-error>
+    <mat-error *ngIf="userId?.errors?.pattern">
+      User ID must be a 9-digit number.
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
+</form>

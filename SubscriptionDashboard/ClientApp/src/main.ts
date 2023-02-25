@@ -4,6 +4,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
@@ -16,5 +17,5 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)],
+  providers: [provideRouter(routes), provideAnimations()],
 }).catch((err) => console.error(err));
