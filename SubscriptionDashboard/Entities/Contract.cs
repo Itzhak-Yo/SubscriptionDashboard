@@ -1,6 +1,6 @@
 ﻿namespace SubscriptionDashboard.Entities
 {
-    public class Contrat
+    public class Contract
     {
         public int SubscriptionId { get; set; }
         public string SubscriptionName { get; set; }

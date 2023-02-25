@@ -11,7 +11,7 @@ namespace SubscriptionDashboard.Data
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Contrat> Contrats { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
         public DbSet<Package> Packages { get; set; }
     }
 }
