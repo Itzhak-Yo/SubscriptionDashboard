@@ -3,8 +3,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PIE_CHART_CONFIG } from './configs/pie-chart.config';
-import { PackageType } from 'src/app/core/configs/package.config';
 import { CommonModule } from '@angular/common';
+import { PackageType } from 'src/app/core/models/package';
 
 @Component({
   selector: 'app-package',

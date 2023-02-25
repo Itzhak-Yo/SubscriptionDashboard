@@ -1,4 +1,4 @@
-import { PackageType } from '../../../../core/configs/package.config';
+import { PackageType } from 'src/app/core/models/package';
 
 type PieChartConfig = {
   view: [number, number];
@@ -17,15 +17,15 @@ type PackageTypeToColorMapper = {
 };
 
 const PackageColorsByType: PackageTypeToColorMapper = {
-  [PackageType.Personal]: [
+  [PackageType.Basic]: [
     { name: 'Used', value: '#54B6FF' }, // Bright blue
     { name: 'Remaining', value: '#EEEEEE' }, // Bright gray
   ],
-  [PackageType.Business]: [
+  [PackageType.Premium]: [
     { name: 'Used', value: '#F0BA0F' }, // gold
     { name: 'Remaining', value: '#EEEEEE' }, // Bright gray
   ],
-  [PackageType.Enterprise]: [
+  [PackageType.Ultimate]: [
     { name: 'Used', value: '#8A0FF0' }, // purpule
     { name: 'Remaining', value: '#EEEEEE' }, // Bright gray
   ],
