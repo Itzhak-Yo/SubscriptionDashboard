@@ -1,4 +1,4 @@
-import { PackageType } from '../../../../core/package.config';
+import { PackageType } from '../../../../core/configs/package.config';
 
 type PieChartConfig = {
   view: [number, number];
