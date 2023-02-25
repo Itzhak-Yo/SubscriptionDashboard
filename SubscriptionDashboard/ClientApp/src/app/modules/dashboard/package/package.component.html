@@ -6,12 +6,12 @@
     >
   </mat-card-header>
   <mat-card-content class="package-content">
-    <p>Used: 15/100 (15%)</p>
+    <p>Used: {{ used }}/100 ({{ used }}%)</p>
     <ngx-charts-pie-chart
       class="pie-chart"
       [view]="PIE_CHART_CONFIG.view"
       [results]="single"
-      [customColors]="PIE_CHART_CONFIG.barChartcustomColors"
+      [customColors]="PIE_CHART_CONFIG.packageColorsByType[0]"
       [doughnut]="PIE_CHART_CONFIG.isDoughnut"
       [arcWidth]="PIE_CHART_CONFIG.arcWidth"
       (select)="onSelect($event)"
