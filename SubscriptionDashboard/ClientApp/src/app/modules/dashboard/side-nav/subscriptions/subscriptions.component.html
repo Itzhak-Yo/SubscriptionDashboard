@@ -6,7 +6,9 @@
   <mat-card-content
     *ngFor="let subscription of subscriptions; trackBy: trackBySubscriptionId"
   >
-    <p class="subscription">{{ subscription }}</p>
+    <p class="subscription" (click)="modifyQuery(subscription.subscriptionId)">
+      {{ subscription.subscriptionId }}
+    </p>
     <mat-divider></mat-divider>
   </mat-card-content>
 </mat-card>

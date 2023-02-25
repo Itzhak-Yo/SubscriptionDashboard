@@ -4,6 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { IContract, SubscriptionType } from 'src/app/core/models/contract';
 import { PackageType } from 'src/app/core/models/package';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subscriptions',
@@ -13,9 +14,10 @@ import { PackageType } from 'src/app/core/models/package';
   styleUrls: ['./subscriptions.component.css'],
 })
 export class SubscriptionsComponent {
+  constructor(private router: Router) {}
   subscriptions: IContract[] = [
     {
-      subscriptionId: 1,
+      subscriptionId: 15467,
       subscriptionName: 'Basic Subscription',
       subscriptionType: SubscriptionType.Personal,
       packages: [
@@ -36,7 +38,7 @@ export class SubscriptionsComponent {
       ],
     },
     {
-      subscriptionId: 2,
+      subscriptionId: 27878,
       subscriptionName: 'Premium Subscription',
       subscriptionType: SubscriptionType.Enterprise,
       packages: [
@@ -50,7 +52,7 @@ export class SubscriptionsComponent {
       ],
     },
     {
-      subscriptionId: 3,
+      subscriptionId: 3555544,
       subscriptionName: 'Basic Subscription',
       subscriptionType: SubscriptionType.Business,
       packages: [
@@ -67,5 +69,12 @@ export class SubscriptionsComponent {
 
   trackBySubscriptionId(index: number, subscription: IContract): number {
     return subscription.subscriptionId;
+  }
+
+  modifyQuery(subscriptionId: number): void {
+    this.router.navigate([], {
+      queryParams: { subscriptionId },
+      queryParamsHandling: 'merge',
+    });
   }
 }
