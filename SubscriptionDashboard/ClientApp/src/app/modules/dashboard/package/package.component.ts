@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { PIE_CHART_CONFIG } from './pie-chart.config';
+import { PIE_CHART_CONFIG } from './configs/pie-chart.config';
 import { PackageType } from 'src/app/core/package.config';
 
 @Component({

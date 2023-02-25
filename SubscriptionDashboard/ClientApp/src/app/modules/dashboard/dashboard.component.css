@@ -1,4 +1,10 @@
 .packages {
   display: flex;
   flex-wrap: wrap;
+  max-width: 1800px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
