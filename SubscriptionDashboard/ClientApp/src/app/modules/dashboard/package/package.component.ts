@@ -38,6 +38,7 @@ export class PackageComponent {
 
   constructor() {}
 
+  // can be used later
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
@@ -49,4 +50,5 @@ export class PackageComponent {
   onDeactivate(data: any): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
+  //
 }

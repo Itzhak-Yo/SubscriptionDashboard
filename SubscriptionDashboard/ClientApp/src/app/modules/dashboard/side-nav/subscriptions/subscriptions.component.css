@@ -1,0 +1,13 @@
+.subscriptions {
+  margin: 0.5rem;
+}
+
+.subscription {
+  padding: 0.5rem 0 0;
+  margin: 0.5rem 0;
+}
+
+.subscription:hover {
+  cursor: pointer;
+  background-color: #F6F6F6;
+}
